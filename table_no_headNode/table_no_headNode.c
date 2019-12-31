@@ -3,7 +3,7 @@
 
 typedef struct Link {
     int elem;
-	struct Link* next;
+    struct Link* next;
 } link;
 
 link* insertElem(link* p, int elem, int pos);
@@ -47,7 +47,7 @@ link* insertElem(link* p, int elem, int pos)
     insertNode->elem = elem;
     insertNode->next = temp->next;
     temp->next = insertNode;
-back :
+back:
     return p;
 }
 
@@ -69,7 +69,7 @@ link* deleElem(link* p, int pos)
 	}
     temp->next = deleNode->next;
     free(deleNode);
-back :
+back:
     return p;
 }
 
@@ -85,7 +85,7 @@ link* updateElem(link* p, int newElem, int pos)
         }
     }
     temp->elem = newElem;
-back :
+back:
     return p;
 }
 
@@ -102,7 +102,7 @@ int searchElem(link* p, int elem)
         }
     }
     printf("======= not find. over! =====\n");
-back :
+back:
     return i;
 }
 
