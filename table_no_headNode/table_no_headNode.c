@@ -15,28 +15,28 @@ int showLink(link* p);
 int main(void)
 {
     link* p = (link*)malloc(sizeof(link));
-	p->next = NULL;
-	int i;
+    p->next = NULL;
+    int i;
     for (i = 0; i < 5; i++) {
         insertElem(p, i+1, i+1);
     }
     showLink(p);
-	for (i = 0; i < 5; i++) {
+    for (i = 0; i < 5; i++) {
         updateElem(p, i+2, i+1);
     }
-	showLink(p);
-	deleElem(p, 1);
-	showLink(p);
-	searchElem(p, 4);
+    showLink(p);
+    deleElem(p, 1);
+    showLink(p);
+    searchElem(p, 4);
     return 0;
 }
 
 link* insertElem(link* p, int elem, int pos)
 {
     link* temp = p; /* temp指向头结点 */
-	link* insertNode = (link*)malloc(sizeof(link));
+    link* insertNode = (link*)malloc(sizeof(link));
     insertNode->next = NULL;
-	int i;
+    int i;
     for (i = 1; i < pos; i++) {
         temp = temp->next;
         if (temp == NULL) {
@@ -54,7 +54,7 @@ back :
 link* deleElem(link* p, int pos)
 {
     link* temp = p; /* temp指向头结点 */
-	int i;
+    int i;
     for (i = 1; i < pos; i++) {
         temp = temp->next;
         if (temp == NULL) {
@@ -62,21 +62,21 @@ link* deleElem(link* p, int pos)
             goto back;
         }
     }
-	link *deleNode = temp->next;
+    link *deleNode = temp->next;
     if (deleNode == NULL) {
         printf("wrong position!\n");
         goto back;
 	}
     temp->next = deleNode->next;
-	free(deleNode);
+    free(deleNode);
 back :
-	return p;
+    return p;
 }
 
 link* updateElem(link* p, int newElem, int pos)
 {
     link* temp = p; /* temp指向头结点 */
-	int i;
+    int i;
     for (i = 1; i <= pos; i++) {
         temp = temp->next;
         if (temp == NULL) {
@@ -95,12 +95,12 @@ int searchElem(link* p, int elem)
     int i = 0;
     while (temp->next) {
         temp = temp->next;
-		if (temp->elem == elem) {
+        if (temp->elem == elem) {
             printf("match number %d\n", temp->elem);
             i++;
             goto back;
         }
-	}
+    }
     printf("======= not find. over! =====\n");
 back :
     return i;
@@ -113,7 +113,7 @@ int showLink(link* p){
         temp = temp->next;
         printf("%d = %d\n", i+1, temp->elem);
         i++;
-	}
+    }
     printf("======= show over =====\n");
     return i;
 }
