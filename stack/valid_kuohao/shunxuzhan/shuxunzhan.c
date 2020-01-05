@@ -51,7 +51,8 @@ int main(int argc, char** argv)
 
 int isMatchSignal(Elem_Type pop_elem,Elem_Type input_elem)
 {
-    if ((pop_elem == '(' && input_elem == ')') || (pop_elem == '[' && input_elem == ']') ||
+    if ((pop_elem == '(' && input_elem == ')') ||
+        (pop_elem == '[' && input_elem == ']') ||
         (pop_elem == '{' && input_elem == '}')) {
         goto ismatch;
     } else {
